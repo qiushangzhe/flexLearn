@@ -16,11 +16,11 @@
 //     $('.flex-wrap-introduce-box').toggle( "fold", 100 );
 // })
 var vue = new Vue({
-    el:"#app",
-    data:dataList,
-    methods:{
-        changeAttr:function(attr){
-            $('#showBox').css(attr,this.selected);
+    el: "#app",
+    data: dataList,
+    methods: {
+        changeAttr: function(item) {
+            $('#showBox').css(item.attr, item.selected);
         }
     }
 })
