@@ -11,6 +11,7 @@
     padding:10px;
     border:1px solid red;
     height:200px;
+    overflow-y: scroll;
 }
 
 #showBox li{
@@ -26,4 +27,19 @@ button{
     height:40px;
     border-radius: 10px;
     outline: none;
+}
+.x{
+    padding: 2px 10px;
+}
+
+.x:hover{
+    cursor: pointer;
+    color: red;
+    border:1px solid #eee;
+    
+}
+
+#result:hover {
+    cursor: pointer;
+    text-shadow: 1px 1px 1px #ddd;
 }

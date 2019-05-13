@@ -1,5 +1,6 @@
 var dataList = {
     selected: '1',
+    result : [],
     fatherList: [{
             attr: 'flex-direction',
             introduce: "决定主轴的方向（即项目的排列方向）",

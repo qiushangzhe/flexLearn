@@ -9,35 +9,33 @@
 
 <body>
     <div id="app">
-        <h1>flex布局主要需要学习的有两点</h1>
-        <h2>1. 设置在父元素上的相关属性</h2>
-        <h2>2. 设置在子元素上的相关属性</h2>
-        <hr>
-        <p>父元素相关</p>
         <!--父元素的：flex-direction-->
         <section v-for="item in fatherList">
             <span class="tag">{{item.attr}}</span>
             <span class="flex-direction-introduce-box hide">{{item.introduce}}</span>
             <select :id="item.attr" v-on:change="changeAttr(item)" v-model="item.selected">
-                    <option :value="obj.value" v-for="obj in item.options">{{obj.introduce}}</option>
-                </select>
-            <span>{{item.selected}}</span>
+                <option :value="obj.value" v-for="obj in item.options">{{obj.introduce}}</option>
+            </select>
+            <!-- <span>{{item.selected}}</span> -->
+            <!-- <span v-if="item.selected">{{item.attr}}:{{item.selected}};</p> -->
+            <span class="x" @click="clearAttr(item)">x</span>
         </section>
-
         <ul id="showBox">
             <li>苹果</li>
             <li>苹果</li>
             <li>苹果</li>
             <li>香蕉</li>
             <li>菠萝</li>
-            <li>西红柿</li>
-            <li>橘子</li>
         </ul>
+        <div style="border:1px solid blue;padding: 20px 10px;" id="result" data-clipboard-target="#result">
+            <span>display:flex;</span><br>
+            <span v-for="item of result" v-if="item.selected">{{item.attr}}:{{item.selected}};<br></span>
+        </div>
     </div>
-
-    <script src="js/lib/jquery-3.0.0.js" charset="utf-8"></script>
-    <script src="js/lib/jquery-ui.js" charset="utf-8"></script>
-    <script src="js/lib/vue.js" charset="utf-8"></script>
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js" charset="utf-8"></script>
+    <script src="https://cdn.bootcss.com/vue/2.6.10/vue.min.js" charset="utf-8"></script>
+    <script src="https://cdn.bootcss.com/clipboard.js/2.0.4/clipboard.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery.notification/1.0.2/jquery.notification.min.js"></script>
     <script src="js/data.js" charset="utf-8"></script>
     <script src="js/main.js" charset="utf-8"></script>
 </body>
