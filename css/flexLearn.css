@@ -5,14 +5,18 @@
     list-style: none;
     padding:10px;
     border:1px solid red;
-    height:200px;
+    height:400px;
     overflow-y: scroll;
 }
-
+.card { margin-left: 15px; }
+.select-item { display:flex; align-items:center; padding: 10px; }
+.form-control{ width: 300px !important; }
+.tag{ font-size : 20px; padding-left: 20px; width: 160px; }
+.x{ height:20px;line-height:0!important; margin-left: 20px; }
 #showBox li{
     width:100px;
     height:100px;
-    border:1px solid blue;
+    /* border:1px solid blue; */
     line-height: 100px;
     text-align: center;
 }
@@ -30,9 +34,13 @@ button{
 #result:hover {
     cursor: pointer;
     text-shadow: 1px 1px 1px #ddd;
-    display:flex;
-    flex-direction:row;
-    flex-wrap:wrap;
-    justify-content:center;
-    align-items:center;
+    /* display:flex; */
+    /* flex-direction:row; */
+    /* flex-wrap:wrap; */
+    /* justify-content:center; */
+    /* align-items:center; */
+}
+#result span{
+    padding: 10px; 
+    font-size: 20px;
 }

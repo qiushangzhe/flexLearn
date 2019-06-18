@@ -3,33 +3,53 @@
 
 <head>
     <meta charset="utf-8">
-    <title>flex布局练习</title>
+    <title>flex布局生成工具 by:qiusz</title>
     <link rel="stylesheet" href="css/flexLearn.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 
 <body>
     <div id="app">
+        <div class="alert alert-success" role="alert">
+            FLEX 生成工具 by:qiusz
+        </div>
         <!--父元素的：flex-direction-->
-        <section v-for="item in fatherList">
+        <section v-for="item in fatherList" class="select-item">
             <span class="tag">{{item.attr}}</span>
             <span class="flex-direction-introduce-box hide">{{item.introduce}}</span>
-            <select :id="item.attr" v-on:change="changeAttr(item)" v-model="item.selected">
+            <select class="form-control" :id="item.attr" v-on:change="changeAttr(item)" v-model="item.selected">
                 <option :value="obj.value" v-for="obj in item.options">{{obj.introduce}}</option>
             </select>
             <!-- <span>{{item.selected}}</span> -->
             <!-- <span v-if="item.selected">{{item.attr}}:{{item.selected}};</p> -->
-            <span class="x" @click="clearAttr(item)">x</span>
+            <button type="button" class="x btn btn-outline-info btn-sm" @click="clearAttr(item)">清空</button>
         </section>
         <ul id="showBox">
-            <li>苹果</li>
-            <li>苹果</li>
-            <li>苹果</li>
-            <li>香蕉</li>
-            <li>菠萝</li>
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <p class="card-text">这是一个子元素</p>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <p class="card-text">这是一个子元素</p>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <p class="card-text">这是一个子元素</p>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <p class="card-text">这是一个子元素</p>
+                </div>
+            </div>
         </ul>
-        <div style="border:1px solid blue;padding: 20px 10px;" id="result" data-clipboard-target="#result">
-            <span>display:flex;</span><br>
-            <span v-for="item of result" v-if="item.selected">{{item.attr}}:{{item.selected}};<br></span>
+        <div style="padding: 20px 10px;" id="result" data-clipboard-target="#result">
+            <span>display:flex;</span>
+            <span v-for="item of result" v-if="item.selected">{{item.attr}}:{{item.selected}};</span>
         </div>
     </div>
     <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js" charset="utf-8"></script>
